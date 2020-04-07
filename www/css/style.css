@@ -29,6 +29,7 @@ body {
 
 /* plot container and title, plot and caption */
 .plotbox {
+	clear: both;
 	margin: 20px 0 40px;
 	padding: 0;
 }
