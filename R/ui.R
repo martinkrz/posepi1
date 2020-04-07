@@ -11,7 +11,7 @@ ui = fluidPage( theme=("css/style.css"),
                                                     min = 1, max = R0_max, step = R0_step),
                                         sliderInput("vac", HTML("vaccination level, <i>p</i> (%)"), 0,
                                                     min = 0, max = 99, step = 1),
-                                        checkboxInput("log1", HTML("y-axis log scale"), FALSE)
+                                        checkboxInput("log1", HTML("log y-axis scale"), FALSE)
                                       ),
                                       mainPanel(h3("The SIR model infection spread"),
                                                 div(htmlOutput("text1"),class="copy"),
