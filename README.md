@@ -9,7 +9,7 @@
 3. Canada’s Michael Smith Genome Sciences Center, Vancouver, British Columbia, Canada.
 4. Department of Statistics, The Pennsylvania State University, State College, PA, USA.
 
-Interactive figures accompanying the Points of Significance column.
+Interactive figures accompanying the column.
 
 ![Points of Significance: Modeling infectious epidemics](https://github.com/martinkrz/posepi1/blob/master/www/img/screenshot.png)
 
