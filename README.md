@@ -8,7 +8,7 @@ Interactive figures accompanying the Points of Significance column.
 
 ### Access remotely
 
-[Shiny server shinyapps.io](https://martinkrz.shinyapps.io/posepi1/)
+[Shiny server at shinyapps.io](https://martinkrz.shinyapps.io/posepi1/)
 
 ### Running locally
 
@@ -25,6 +25,10 @@ Run the app by loading `app.R` and cliking `Run App`.
 * **Ottar Bjornstad** - *Code template and tips*
 * **Naomi Altman** - *Code template*
 * **Martin Krzywinski** - *Coding*
+
+## Bugs and comments
+
+[Martin Krzywinski](mailto:martink@bcgsc.ca)
 
 ## Citation
 
