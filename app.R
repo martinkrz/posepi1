@@ -27,6 +27,8 @@
 #              added css/style.css as theme for fluidPage()
 # 04-04-2020   figure captions
 #              more CSS styling
+# 06-04-2020   factored out ui.R, server.R
+#              created GitHub repo https://github.com/martinkrz/posepi1
 
 require(shiny)
 require(deSolve)

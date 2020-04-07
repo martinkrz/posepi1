@@ -111,11 +111,15 @@ ui = fluidPage( theme=("css/style.css"),
                                       br(),
                                       
                                       hr(),
-                                      
+                                      h4("Download code"),
+                                      p(tags$a(href="https://github.com/martinkrz/posepi1","https://github.com/martinkrz/posepi1")),
+                                      hr(),
+                                  
                                       h4("Version history"),
                                       
                                       h5("6 April 2020"),
                                       p("Initial public release.")
+                                      
                                       
                                     ))
                            
