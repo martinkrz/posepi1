@@ -2,6 +2,8 @@
 
 Interactive figures accompanying the Points of Significance column.
 
+[Points of Significance: Modeling infectious epidemics](https://github.com/martinkrz/posepi1/blob/master/www/img/screenshot.png)
+
 ## Getting Started
 
 ### Access remotely
