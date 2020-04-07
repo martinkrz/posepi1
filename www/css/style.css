@@ -1,5 +1,5 @@
 html {
-font-family: Helvetica, Arial, sans;
+	font-family: Helvetica, Arial, sans;
 }
 
 body {
@@ -46,9 +46,6 @@ body {
 
 p {
 	margin: 0 0 0.5em 0;
-}
-
-p.caption {
 }
 
 .caption p::before {
