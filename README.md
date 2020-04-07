@@ -24,8 +24,6 @@ Run the app by loading `app.R` and cliking `Run App`.
 * **Naomi Altman** - *Code template*
 * **Martin Krzywinski** - *Coding*
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
 ## Citation
 
 Bjornstad, O., Shea, K., Krzywinski, M. & Altman, N. Points of Significance: Modelling Infectious Epidemics (2020) Nat Meth 17 (in press)
