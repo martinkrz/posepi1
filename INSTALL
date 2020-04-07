@@ -1,0 +1,23 @@
+This is an R Shiny app.
+
+You can access it remotely at
+
+http://URL
+
+or run it locally by first downloading R Studio from
+
+http://rstudio.com
+
+then installing the following packages
+
+shiny
+deSolve
+ggplot2
+grid
+stringr
+
+using the following R command
+
+install.packages(c("shiny","deSolve","ggplot2","grid","stringr"))
+
+and running the app by loading app.R in R Studio and clicking "Run App".
