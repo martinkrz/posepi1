@@ -1,0 +1,81 @@
+html {
+font-family: Helvetica, Arial, sans;
+}
+
+body {
+	margin: 10px 0;
+}
+
+#natmeth {
+	padding: 5px 3px;
+	height: 35px;
+	background: #657691;
+	margin-bottom:2px;
+}
+#natmeth img {
+	height: 25px;
+}
+
+#mast {
+	padding: 5px;
+	margin: 0;
+	background-color: rgba(101,118,145,0.5);
+	font-size: 90%;
+	text-align: left;
+	color: white;
+	margin-bottom:2px;
+}
+.title {
+	clear: both;
+	padding: 0px 0 5px 10px;
+	margin-bottom: 5px;
+	background: #f8f8f8;
+	border-top: 1px solid #ccc;
+	color: #333;
+}
+.plot {
+	margin-bottom:10px;
+	text-align:left;
+}
+.caption {
+	font-size: 90%;
+	padding-left: 25px;
+	color: #666;
+	margin-bottom: 3em;
+}
+
+p {
+	margin: 0 0 0.5em 0;
+}
+
+p.caption {
+}
+
+.caption p::before {
+  content: "▲ ";
+  font-size:75%;
+  color: #333; /*#ec008c;*/
+}
+
+h3 {
+	color: #333;
+	font-size: 150%;
+	margin: 0 0 0.5em 0;
+}
+h4 {
+	text-transform: uppercase;
+	font-size: 90%;
+	font-weight: bold;
+	color: #333;
+	margin: 1em 0 0.25em 0;
+}
+h5 {
+	font-weight: normal;
+	font-size: 100%;
+	color: #333;
+	padding-bottom: 0px;
+	
+}
+h5 p {
+	margin: 3px 0;
+}
