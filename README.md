@@ -8,7 +8,7 @@ Interactive figures accompanying the Points of Significance column.
 
 ### Access remotely
 
-[Shiny server at Canada's Michael Smith Genome Sciences Center](http://mkweb.bcgsc.ca)
+[Shiny server shinyapps.io](https://martinkrz.shinyapps.io/posepi1/)
 
 ### Running locally
 
