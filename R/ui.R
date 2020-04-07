@@ -132,15 +132,17 @@ ui = fluidPage( theme=("css/style.css"),
                                       p("4. Department of Statistics, The Pennsylvania State University, State College, PA, USA."),
                                         class="affiliations"),
                                       p("*",tags$a(href="mailto:martink@bcgsc.ca",tags$i("martink@bcgsc.ca"))),
-                                      p(HTML("<i>Nature Methods</i> (2020) <b>17</b>:xxx&ndash;xxx.")),
-                                      
+
                                       hr(),
                                       h4("Download code"),
                                       p(tags$a(href="https://github.com/martinkrz/posepi1","https://github.com/martinkrz/posepi1")),
-                                      hr(),
-                                  
-                                      h4("Version history"),
                                       
+                                      hr(),
+                                      h4("Citation"),
+                                      p(HTML("Bjornstad, O., Shea, K., Krzywinski, M. & Altman, N. Points of Significance: Modelling Infectious Epidemics (2020) <i>Nature Methods</i> <b>17</b> (in press).")),
+                                      
+                                      hr(),
+                                      h4("Version history"),
                                       h5("7 April 2020"),
                                       p("Initial public release."),
                                       width=16
