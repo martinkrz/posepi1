@@ -41,7 +41,7 @@ Run the app by loading `app.R` and cliking `Run App`.
 
 ## Citation
 
-Bjornstad, O., Shea, K., Krzywinski, M. & Altman, N. Points of Significance: Modelling Infectious Epidemics (2020) Nat Meth 17 (in press)
+Bjornstad, O., Shea, K., Krzywinski, M. & Altman, N. Points of Significance: Modelling infectious epidemics (2020) *Nature Methods* **17** (in press).
 
 ## License
 
