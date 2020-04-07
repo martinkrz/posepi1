@@ -4,7 +4,8 @@ ui = fluidPage( theme=("css/style.css"),
                            tabPanel("The SIR model",value=1,id=1,
                                     sidebarLayout(
                                       sidebarPanel(
-                                        sliderInput("ip1", HTML("Infectious period, <i>ip</i> (days)"), value = ip_default,
+                                        sliderInput("ip1", HTML("Infectious period, <i>ip</i> (days)"), 
+                                                    value = ip_default,
                                                     min = 1, max = ip_max, step = 1),
                                         sliderInput("R01", HTML("<i>R</i><sub>0</sub>"), value = 3,
                                                     min = 1, max = R0_max, step = R0_step),
@@ -13,10 +14,12 @@ ui = fluidPage( theme=("css/style.css"),
                                         checkboxInput("log1", HTML("y-axis log scale"), FALSE)
                                       ),
                                       mainPanel(h3("The SIR model infection spread"),
-                                                htmlOutput("text1"),
+                                                div(htmlOutput("text1"),class="copy"),
+                                                div(
                                                 div(htmlOutput("title1a"),class="title"),
-                                                div(plotOutput("plot1",height=height),class="plot"),
-                                                div(htmlOutput("caption1"),class="caption")
+                                                div(plotOutput("plot1"),class="plot"),
+                                                div(htmlOutput("caption1"),class="caption"),
+                                                class="plotbox")
                                       )
                                     )),
                            
@@ -35,25 +38,37 @@ ui = fluidPage( theme=("css/style.css"),
                                       ),
                                       mainPanel(
                                         h3(HTML("Effect of <i>R</i><sub>0</sub> mitigation on infection spread")),
-                                        htmlOutput("text2"),
+                                        div(htmlOutput("text2"),class="copy"),
+                                        div(
                                         div(htmlOutput("title2a"),class="title"),
-                                        div(plotOutput("plot2a",height = height),class="plot"),
+                                        div(plotOutput("plot2a"),class="plot"),
                                         div(htmlOutput("caption2a"),class="caption"),
+                                        class="plotbox"),
+                                        div(
                                         div(htmlOutput("title2b"),class="title"),
-                                        div(plotOutput("plot2b",height = height),class="plot"),
+                                        div(plotOutput("plot2b"),class="plot"),
                                         div(htmlOutput("caption2b"),class="caption"),
+                                        class="plotbox"),
+                                        div(
                                         div(htmlOutput("title2c"),class="title"),
-                                        div(plotOutput("plot2c",height = height),class="plot"),
+                                        div(plotOutput("plot2c"),class="plot"),
                                         div(htmlOutput("caption2c"),class="caption"),
+                                        class="plotbox"),
+                                        div(
                                         div(htmlOutput("title2d"),class="title"),
-                                        div(plotOutput("plot2d",height = height),class="plot"),
+                                        div(plotOutput("plot2d"),class="plot"),
                                         div(htmlOutput("caption2d"),class="caption"),
+                                        class="plotbox"),
+                                        div(
                                         div(htmlOutput("title2e"),class="title"),
-                                        div(plotOutput("plot2e",height = height),class="plot"),
+                                        div(plotOutput("plot2e"),class="plot"),
                                         div(htmlOutput("caption2e"),class="caption"),
+                                        class="plotbox"),
+                                        div(
                                         div(htmlOutput("title2f"),class="title"),
-                                        div(plotOutput("plot2f",height = height),class="plot"),
-                                        div(htmlOutput("caption2f"),class="caption")
+                                        div(plotOutput("plot2f"),class="plot"),
+                                        div(htmlOutput("caption2f"),class="caption"),
+                                        class="plotbox")
                                       )
                                     )),
                            
@@ -66,19 +81,27 @@ ui = fluidPage( theme=("css/style.css"),
                                                     min = 1, max = R0_max, step = R0_step)
                                       ),
                                       mainPanel(h3("Effect of vaccination on infection spread"),
-                                                htmlOutput("text3"),
+                                                div(htmlOutput("text3"),class="copy"),
+                                                div(
                                                 div(htmlOutput("title3a"),class="title"),
-                                                div(plotOutput("plot3a",height = height),class="plot"),
+                                                div(plotOutput("plot3a"),class="plot"),
                                                 div(htmlOutput("caption3a"),class="caption"),
+                                                class="plotbox"),
+                                                div(
                                                 div(htmlOutput("title3b"),class="title"),
-                                                div(plotOutput("plot3b",height = height),class="plot"),
+                                                div(plotOutput("plot3b"),class="plot"),
                                                 div(htmlOutput("caption3b"),class="caption"),
+                                                class="plotbox"),
+                                                div(
                                                 div(htmlOutput("title3c"),class="title"),
-                                                div(plotOutput("plot3c",height = height),class="plot"),
+                                                div(plotOutput("plot3c"),class="plot"),
                                                 div(htmlOutput("caption3c"),class="caption"),
+                                                class="plotbox"),
+                                                div(
                                                 div(htmlOutput("title3d"),class="title"),
-                                                div(plotOutput("plot3d",height = height),class="plot"),
-                                                div(htmlOutput("caption3d"),class="caption")
+                                                div(plotOutput("plot3d"),class="plot"),
+                                                div(htmlOutput("caption3d"),class="caption"),
+                                                class="plotbox")
                                       )
                                       
                                     )),
@@ -101,14 +124,15 @@ ui = fluidPage( theme=("css/style.css"),
                            tabPanel("Credits",value=5,id="5",
                                     mainPanel(
                                       h3("Points of Significance: Modelling Infectious Epidemics"),
-                                      p(tags$b("Ottar Bjornstad (1,2), Katriona Shea (1), Martin Krzywinski (3*), Naomi Altman (4)")),
+                                      p(HTML("Ottar Bjornstad<sup>1,2</sup>, Katriona Shea<sup>1</sup>, Martin Krzywinski<sup>3*</sup>, Naomi Altman<sup>4</sup>")),
+                                      div(
                                       p("1. Department of Biology, The Pennsylvania State University, State College, PA, USA."),
                                       p("2. Department of Entomology, The Pennsylvania State University, State College, PA, USA."),
-                                      p("3. Canada’s Michael Smith Genome Sciences Centre, Vancouver, British Columbia, Canada."),
+                                      p("3. Canada’s Michael Smith Genome Sciences Center, Vancouver, British Columbia, Canada."),
                                       p("4. Department of Statistics, The Pennsylvania State University, State College, PA, USA."),
+                                        class="affiliations"),
                                       p("*",tags$a(href="mailto:martink@bcgsc.ca",tags$i("martink@bcgsc.ca"))),
                                       p(HTML("<i>Nature Methods</i> (2020) <b>17</b>:xxx&ndash;xxx.")),
-                                      br(),
                                       
                                       hr(),
                                       h4("Download code"),
@@ -117,9 +141,9 @@ ui = fluidPage( theme=("css/style.css"),
                                   
                                       h4("Version history"),
                                       
-                                      h5("6 April 2020"),
-                                      p("Initial public release.")
-                                      
+                                      h5("7 April 2020"),
+                                      p("Initial public release."),
+                                      width=16
                                       
                                     ))
                            

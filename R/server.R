@@ -127,7 +127,7 @@ server = function(input, output, session) {
     
     bgstr = sprintf(" (%s = %s%s = %.3f/day, %s = 1/%s = %.3f/day)",varfmt("beta"),varfmt("gamma"),varfmt("R0"),beta,tags$i("γ"),tags$i("ip"),gamma)
     
-    table(rows=makerows(c("ip",varfmt(value=ip,units="days"),
+    table(title="SIR model parameters",rows=makerows(c("ip",varfmt(value=ip,units="days"),
                           "R0",varfmt(value=R0,prec=1),
                           "p",varfmt(value=vac,prec=0,percent=1),
                           "beta",varfmt(value=beta,prec=4,units="/day"),
@@ -203,7 +203,7 @@ server = function(input, output, session) {
     bgstrR0min = sprintf(" (%s = %s%s%s = %.3f, %s = 1/%s = %.3f)",tags$i("β"),tags$i("γ"),tags$i("R"),tags$sub(0),gamma*R0min,tags$i("γ"),tags$i("ip"),gamma)
     bgstrR0max = sprintf(" (%s = %s%s%s = %.3f, %s = 1/%s = %.3f)",tags$i("β"),tags$i("γ"),tags$i("R"),tags$sub(0),gamma*R0max,tags$i("γ"),tags$i("ip"),gamma)
     
-    table(title="mitigated",makerows(c("ip",varfmt(value=ip,units="days"),
+    table(title="mitigated model",makerows(c("ip",varfmt(value=ip,units="days"),
                                        "R0",varfmt(value=R0final,prec=1),
                                        "beta",varfmt(value=gamma*R0final,prec=4,units="/day"),
                                        "gamma",varfmt(value=gamma,prec=4,units="/day"),
@@ -218,7 +218,7 @@ server = function(input, output, session) {
                                        "Ideltat",varfmt(value=sumincapm/summ,percent=1,prec=1,units="cases"),
                                        "I>deltat",varfmt(value=sumbeyondcapm/summ,percent=1,prec=1,units="cases")
     )))
-    table(title="original",makerows(c("ip",varfmt(value=ip,units="days"),
+    table(title="original model",makerows(c("ip",varfmt(value=ip,units="days"),
                                       "R0",varfmt(value=R0init,prec=1),
                                       "beta",varfmt(value=gamma*R0init,prec=4,units="/day"),
                                       "gamma",varfmt(value=gamma,prec=4,units="/day"),
@@ -265,7 +265,7 @@ server = function(input, output, session) {
     pc_crit  = 1-1/R0
     pc_range = seq(0,pc_crit,by=0.1)
     
-    table(title="original",makerows(c("ip",varfmt(value=ip,units="days"),
+    table(title="SIR model parameters",makerows(c("ip",varfmt(value=ip,units="days"),
                                       "R0",varfmt(value=R0,prec=1),
                                       "beta",varfmt(value=gamma*R0,prec=4,units="/day"),
                                       "gamma",varfmt(value=gamma,prec=4,units="/day"),
@@ -300,18 +300,18 @@ server = function(input, output, session) {
     t2max  = tmp[nrow(tmp),]$time
     it2max = tmp[nrow(tmp),]$I
     
-    #plot = plot + geom_area(data=tmp,aes(y=I),fill=as.list(palette)$I,alpha=0.2,size=line_plot_width)
-    plot = plot + geom_ribbon(data=tmp,aes(x=time,ymin=0.0001,ymax=I),fill=as.list(palette)$I,alpha=0.2,size=line_plot_width)
+    #plot = plot + geom_area(data=tmp,aes(y=I),fill=as.list(palette)$I,alpha=0.2,size=plot_line_width)
+    plot = plot + geom_ribbon(data=tmp,aes(x=time,ymin=0.0001,ymax=I),fill=as.list(palette)$I,alpha=0.2,size=plot_line_width)
     
-    plot = plot + geom_line(aes(y=S,colour="S"),size=line_plot_width)
-    plot = plot + geom_line(aes(y=R,colour="R"),size=line_plot_width)
-    plot = plot + geom_line(aes(y=I,colour="I"),size=line_plot_width)
-    plot = plot + geom_hline(yintercept=imax,colour=as.list(palette)$I,size=line_plot_width/2,linetype="dashed")
-    plot = plot + geom_hline(yintercept=rmax,colour=as.list(palette)$R,size=line_plot_width/2,linetype="dashed")
-    plot = plot + geom_vline(xintercept=timax,colour=as.list(palette)$I,size=line_plot_width/2,linetype="dotted")
+    plot = plot + geom_line(aes(y=S,colour="S"),size=plot_line_width)
+    plot = plot + geom_line(aes(y=R,colour="R"),size=plot_line_width)
+    plot = plot + geom_line(aes(y=I,colour="I"),size=plot_line_width)
+    plot = plot + geom_hline(yintercept=imax,colour=as.list(palette)$I,size=plot_line_width/2,linetype="dashed")
+    plot = plot + geom_hline(yintercept=rmax,colour=as.list(palette)$R,size=plot_line_width/2,linetype="dashed")
+    plot = plot + geom_vline(xintercept=timax,colour=as.list(palette)$I,size=plot_line_width/2,linetype="dotted")
     
-    #plot = plot + geom_line(data=data.frame(x=c(t1max,t1max),y=c(0,it1max)),aes(x,y),colour=as.list(palette)$I,size=line_plot_width/2,linetype="solid")
-    #plot = plot + geom_line(data=data.frame(x=c(t2max,t2max),y=c(0,it2max)),aes(x,y),colour=as.list(palette)$I,size=line_plot_width/2,linetype="solid")
+    #plot = plot + geom_line(data=data.frame(x=c(t1max,t1max),y=c(0,it1max)),aes(x,y),colour=as.list(palette)$I,size=plot_line_width/2,linetype="solid")
+    #plot = plot + geom_line(data=data.frame(x=c(t2max,t2max),y=c(0,it2max)),aes(x,y),colour=as.list(palette)$I,size=plot_line_width/2,linetype="solid")
     
     title = sprintf("Infection spread for <i>R</i><sub>0</sub> = %.1f and <i>ip</i> = %d days with %.0f%% vaccination.",R0,ip,100*vac)
     plot = plot + my.plot_legend + my.plot_axis(xmin = 0,xmax = tmax,ymin=0,ymax=1,log10=input$log1 )
@@ -336,7 +336,7 @@ server = function(input, output, session) {
     tmax         = max(trajectories[1]$time)
     R0_range     = sort(unique(trajectories$R0),decreasing=TRUE)
     for (R0 in R0_range) {
-      line_width = line_plot_width
+      line_width = plot_line_width
       is_intermediate = R0 < R0init & R0 > R0final
       if(input$show2) {
         if(is_intermediate) {
@@ -373,47 +373,47 @@ server = function(input, output, session) {
     }
     
     plotI = plotI + geom_hline(yintercept=min(summary$imax),
-                               colour=as.list(palette)$I,size=line_plot_width/2,linetype="dashed")
+                               colour=as.list(palette)$I,size=plot_line_width/2,linetype="dashed")
     plotI = plotI + geom_hline(yintercept=max(summary$imax),
-                               colour=as.list(palette)$I,size=line_plot_width/2,linetype="dashed") 
+                               colour=as.list(palette)$I,size=plot_line_width/2,linetype="dashed") 
     plotI = plotI + geom_hline(yintercept=capacity,
-                               linetype="solid",colour=as.list(palette)$C,size=line_plot_width/2) 
+                               linetype="solid",colour=as.list(palette)$C,size=plot_line_width/2) 
     
     plotI = plotI + geom_vline(xintercept=min(summary$timax),
-                               colour=as.list(palette)$I,size=line_plot_width/2,linetype="dotted")
+                               colour=as.list(palette)$I,size=plot_line_width/2,linetype="dotted")
     plotI = plotI + geom_vline(xintercept=max(summary$timax),
-                               colour=as.list(palette)$I,size=line_plot_width/2,linetype="dotted")
+                               colour=as.list(palette)$I,size=plot_line_width/2,linetype="dotted")
     
     plotR = plotR + geom_hline(yintercept=capacity,
-                               linetype="solid",colour=as.list(palette)$C,size=line_plot_width/2) 
+                               linetype="solid",colour=as.list(palette)$C,size=plot_line_width/2) 
     plotR = plotR + geom_hline(yintercept=min(summary$imax),
-                               colour=as.list(palette)$I,size=line_plot_width/2,linetype="dashed")
+                               colour=as.list(palette)$I,size=plot_line_width/2,linetype="dashed")
     plotR = plotR + geom_hline(yintercept=max(summary$imax),
-                               colour=as.list(palette)$I,size=line_plot_width/2,linetype="dashed")
+                               colour=as.list(palette)$I,size=plot_line_width/2,linetype="dashed")
     
     plotR = plotR + geom_hline(yintercept=min(summary$rmax),
-                               colour=as.list(palette)$R,size=line_plot_width/2,linetype="dashed")
+                               colour=as.list(palette)$R,size=plot_line_width/2,linetype="dashed")
     plotR = plotR + geom_hline(yintercept=max(summary$rmax),
-                               colour=as.list(palette)$R,size=line_plot_width/2,linetype="dashed")
+                               colour=as.list(palette)$R,size=plot_line_width/2,linetype="dashed")
     
     plotR = plotR + geom_vline(xintercept=min(summary$timax),
-                               colour=as.list(palette)$I,size=line_plot_width/2,linetype="dotted")
+                               colour=as.list(palette)$I,size=plot_line_width/2,linetype="dotted")
     plotR = plotR + geom_vline(xintercept=max(summary$timax),
-                               colour=as.list(palette)$I,size=line_plot_width/2,linetype="dotted")
+                               colour=as.list(palette)$I,size=plot_line_width/2,linetype="dotted")
     
-    plotImax = plotImax + geom_line(data=summary,aes(x=R0,y=imax,colour="I"),size=line_plot_width) + 
+    plotImax = plotImax + geom_line(data=summary,aes(x=R0,y=imax,colour="I"),size=plot_line_width) + 
       geom_point(data=summary,aes(x=R0,y=imax,colour="I"),size=3)
-    plotRmax = plotRmax + geom_line(data=summary,aes(x=R0,y=rmax,colour="R"),size=line_plot_width) + 
+    plotRmax = plotRmax + geom_line(data=summary,aes(x=R0,y=rmax,colour="R"),size=plot_line_width) + 
       geom_point(data=summary,aes(x=R0,y=rmax,colour="R"),size=3)
-    plotImaxt = plotImaxt + geom_line(data=summary,aes(x=timax,y=imax,colour="I"),size=line_plot_width) + 
+    plotImaxt = plotImaxt + geom_line(data=summary,aes(x=timax,y=imax,colour="I"),size=plot_line_width) + 
       geom_point(data=summary,aes(x=timax,y=imax,colour="I"),size=3)
-    plotRmaxt = plotRmaxt + geom_line(data=summary,aes(x=timax,y=rmax,colour="R"),size=line_plot_width) + 
+    plotRmaxt = plotRmaxt + geom_line(data=summary,aes(x=timax,y=rmax,colour="R"),size=plot_line_width) + 
       geom_point(data=summary,aes(x=timax,y=rmax,colour="R"),size=3)
     
     plotImax = plotImax + geom_hline(yintercept=capacity,
-                                     linetype="solid",colour=as.list(palette)$C,size=line_plot_width/2) 
+                                     linetype="solid",colour=as.list(palette)$C,size=plot_line_width/2) 
     plotImaxt = plotImaxt + geom_hline(yintercept=capacity,
-                                       linetype="solid",colour=as.list(palette)$C,size=line_plot_width/2) 
+                                       linetype="solid",colour=as.list(palette)$C,size=plot_line_width/2) 
     
     plotI = plotI + annotate(geom="label",x=tmax,y=capacity,hjust="right",label="hospital capacity", fill="black",color="white")
     plotR = plotR + annotate(geom="label",x=tmax,y=capacity,hjust="right",label="hospital capacity", fill="black",color="white")
@@ -483,11 +483,11 @@ server = function(input, output, session) {
     it2max = tmp[nrow(tmp),]$I
     
     if(nrow(ibeyondcap)) {
-      #plotI = plotI + geom_area(data=ibeyondcap,aes(x=time,y=I),fill=as.list(palette)$I,alpha=0.2,size=line_plot_width)
+      #plotI = plotI + geom_area(data=ibeyondcap,aes(x=time,y=I),fill=as.list(palette)$I,alpha=0.2,size=plot_line_width)
       plotI = plotI + geom_ribbon(data=ibeyondcap,aes(x=time,ymin=capacity,ymax=I),fill=as.list(palette)$I,alpha=0.5)
     }
     if(nrow(ibeyondcapm)) {
-      #plotI = plotI + geom_area(data=ibeyondcapm,aes(x=time,y=I),fill=as.list(palette)$C,alpha=0.2,size=line_plot_width)
+      #plotI = plotI + geom_area(data=ibeyondcapm,aes(x=time,y=I),fill=as.list(palette)$C,alpha=0.2,size=plot_line_width)
       plotI = plotI + geom_ribbon(data=ibeyondcapm,aes(x=time,ymin=capacity,ymax=I),fill=as.list(palette)$I,alpha=0.2)
       
     }

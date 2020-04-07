@@ -151,13 +151,14 @@ floorToFraction = function(num, den = 1) {
 }
 
 table = function(rows,title=NULL) {
-  cat("<div style='background:rgb(250,250,250);float:right;min-width:175px;padding:20px 0 20px 20px;margin:0 0 10px 20px;border-left:1px solid #ccc'><table>")
+  cat("<div class=parameters>")
   if(! is.null(title)) {
-    cat(paste(tags$b(title)))
+    cat(paste("<div>",title,"</div>"))
   }
+  cat(paste("<table>"))
   for(i in 1:nrow(rows)) {
     row = rows[i,]
-    cat(paste("<tr style='padding:10px 0;'><td style='color:#666;padding-right:10px;text-align:right;'>",row$name,"</td><td style='text-align:left;'>",row$value,"</td></tr>",sep=""))
+    cat(paste("<tr><td>",row$name,"</td><td>",row$value,"</td></tr>",sep=""))
   }
   cat("</table></div>")
 }

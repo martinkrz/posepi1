@@ -20,26 +20,28 @@ multiplot  =function(..., plotlist=NULL, file, cols=1, layout=NULL) {
 
 plot_theme = function(p) {
   line_size   = 1
-  text_size   = 12
   tick_length = 5
   p + theme(plot.background  = element_blank(),
-            aspect.ratio     = 1/1.35,
+            #aspect.ratio     = plot_aspect,
             panel.border     = element_blank(),
             panel.grid.major = element_blank(),
             panel.grid.minor = element_blank(),
             panel.grid.major.y = element_line(color="#dddddd",size=line_size/2.13),
             panel.background = element_blank(),
             line = element_line(color="black",size=line_size/2.13,lineend="round"),
-            text = element_text(color="black",size=text_size,hjust=0.5,vjust=0.5,angle=0,lineheight=0.9),
+            text = element_text(color="black",size=plot_text_size,hjust=0.5,vjust=0.5,angle=0,lineheight=0.9),
             axis.ticks        = element_line(color="black"),
             axis.ticks.length = unit(tick_length,"points"),
             axis.line         = element_line(),
-            axis.title        = element_text(color="black",size=1.2*text_size),
-            axis.text         = element_text(color="black",size=text_size),
+            axis.title        = element_text(color="black",size=1.2*plot_text_size),
+            axis.text         = element_text(color="black",size=plot_text_size),
             panel.spacing     = unit(c(0, 0,   0,   0), "points"),
-            #axis.title.x      = element_blank(),
-            #axis.title.y      = element_blank(),
+            #axis.title.x     = element_blank(),
+            #axis.title.y     = element_blank(),
+            legend.position   = "bottom",
             legend.key        = element_blank(),
+            legend.title      = element_text(size=plot_text_size,face="bold",color="#333333"),
+            legend.text       = element_text(size=plot_text_size),
             plot.margin       = unit(c(0, 75, 0, 0), "points")
   )
 }
