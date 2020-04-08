@@ -17,7 +17,7 @@ Interactive figures accompanying the column.
 
 ### Access remotely
 
-[Shiny server at shinyapps.io](https://martinkrz.shinyapps.io/posepi1/)
+An link to an interactive version of this application will be available shortly.
 
 ### Running locally
 

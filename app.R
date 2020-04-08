@@ -87,4 +87,4 @@ source("R/ggplot.helpers.R",local=T)
 source("R/ui.R",local=T)
 source("R/server.R",local=T)
 
-shinyApp(ui, server)
+shinyApp(ui,server)
