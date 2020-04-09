@@ -13,7 +13,7 @@ ui = fluidPage( theme=("css/style.css"),
                                                     min = 0, max = 99, step = 1),
                                         checkboxInput("log1", HTML("log y-axis scale"), FALSE)
                                       ),
-                                      mainPanel(h3("The SIR model infection spread"),
+                                      mainPanel(h3("The SIR model of infection spread"),
                                                 div(htmlOutput("text1"),class="copy"),
                                                 div(
                                                 div(htmlOutput("title1a"),class="title"),
