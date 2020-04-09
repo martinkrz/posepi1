@@ -4,17 +4,17 @@ server = function(input, output, session) {
   observe(updateSliderInput(session, "R0final", max = input$R0init-R0_step))
   
   # generate the SIR trajectories and summaries for each panel, as needed
-  df1 = reactive(calculate1(input$R01,input$ip1,input$vac/100))
-  df2 = reactive(calculate2(input$R0init,input$R0final,input$ip2))
-  df3 = reactive(calculate3(input$R0v,input$ip3))
+  df1 = reactive(calculate1(input$R01,input$ip1,input$vac/100)) %>% throttle(1000)
+  df2 = reactive(calculate2(input$R0init,input$R0final,input$ip2)) %>% throttle(1000)
+  df3 = reactive(calculate3(input$R0v,input$ip3)) %>% throttle(1000)
   
   # precompute all plots, indexes and titles for a panel, as needed
-  p1 = reactive(plots1(input$R01,input$ip1,input$vac/100))
-  p2 = reactive(plots2(input$R0init,input$R0final,input$ip2))
-  p3 = reactive(plots3(input$R0v,input$ip3))
+  p1 = reactive(plots1(input$R01,input$ip1,input$vac/100)) %>% throttle(1000)
+  p2 = reactive(plots2(input$R0init,input$R0final,input$ip2)) %>% throttle(1000)
+  p3 = reactive(plots3(input$R0v,input$ip3)) %>% throttle(1000)
   
   # estimate how long the outbreak lasts - this will be used as time axis max
-  sir_t_bound = function(beta,gamma,vac=0,tol=0.0005,tmax=1000,step=1) {
+  sir_t_bound = function(beta,gamma,vac=0,tol=sir_init_i/2,tmax=1000,step=1) {
     # get a quick solution out to long time
     R0 = beta/gamma
     if(R0 <= 1 | vac >= 1-1/R0) {
@@ -53,12 +53,22 @@ server = function(input, output, session) {
     return(as.data.frame(out))
   }
   
+  report_timing = function(t0,t1) {
+    if(do_timing) {
+      print(sprintf("%.3f seconds",t1-t0))
+    }
+  }
+  
   # Panel 1: trajectories for a given R0, ip and vac
   calculate1 = function(R0,ip,vac) {
     gamma = 1/ip
     beta  = gamma * R0
+    t0 = Sys.time()
     tmax  = sir_t_bound(beta,gamma,vac)
-    sir(beta = beta, gamma = gamma, vac = vac, tmax = tmax, step = tmax/sir_system_steps)
+    out = sir(beta = beta, gamma = gamma, vac = vac, tmax = tmax, step = tmax/sir_system_steps)
+    t1 = Sys.time()
+    report_timing(t0,t1)
+    return(out)
   }
   
   # Panel 2: step over R0 from Rinit to R0final
@@ -68,6 +78,7 @@ server = function(input, output, session) {
     summary  = data.frame()
     gamma    = 1/ip
     vac      = 0
+    t0 = Sys.time()
     tmax     = sir_t_bound(gamma*min(R0_range),gamma,vac=vac)
     trajectories = data.frame()
     for (R0 in R0_range) {
@@ -80,6 +91,8 @@ server = function(input, output, session) {
       timax = df[df$I == max(df$I),]$time
       summary = rbind(summary,data.frame(R0=R0,timax=timax,smin=smin,imax=imax,rmax=rmax))
     }
+    t1 = Sys.time()
+    report_timing(t0,t1)
     return(list(trajectories,summary))
   }
   
@@ -89,6 +102,7 @@ server = function(input, output, session) {
     beta      = gamma*R0
     pc_crit   = 1-1/R0
     vac_range = seq(0,pc_crit-0.001,by=0.1)
+    t0 = Sys.time()
     tmax      = sir_t_bound(gamma*R0,gamma,max(vac_range))
     summary   = data.frame()
     trajectories = data.frame()
@@ -101,6 +115,8 @@ server = function(input, output, session) {
       timax = df[df$I == max(df$I),]$time
       summary = rbind(summary,data.frame(R0=R0,vac=vac,timax=timax,smin=smin,imax=imax,rmax=rmax))
     }
+    t1 = Sys.time()
+    report_timing(t0,t1)
     return(list(trajectories,summary))
   }
   

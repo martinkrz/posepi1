@@ -57,6 +57,8 @@ library(stringr)
 # 07-04-2020   Renamed some variables.
 #              Streamlined and updated CSS.
 #              Removed fixed plot height and aspect ratio
+# 09-04-2020   added debug timings
+#              reduced time steps to 1000 to decrease load on server
 
 # CUSTOM SETTINGS
 # The colors of the suscetible (S), infected  (I) and recovered (R) trajectories. 
@@ -66,7 +68,7 @@ plot_line_width      = 1.5
 plot_text_size       = 12
 # Initial value for I(0). S(0) = 1 - sir_init_i - vaccination_fraction and R(0) = vaccination_fraction
 sir_init_i           = 0.001
-sir_system_steps     = 5000
+sir_system_steps     = 1000
 sir_system_time_step = 0.01 # last resort default, shouldn't be used
 # Infectious period max and default. Slider step for ip is 1.
 ip_max               = 28
@@ -74,6 +76,8 @@ ip_default           = 14
 # R0 max and slider step
 R0_max               = 5
 R0_step              = 0.1
+# do timings
+do_timing            = FALSE
 
 my.plot_legend = list(
   scale_colour_manual("GROUP", 

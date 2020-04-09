@@ -100,7 +100,7 @@ div.parameters {
 	min-width: 175px;
 	padding: 10px 20px;
 	margin: 0 0 10px 10px;
-	border: 2px solid #e3e3e3;
+	border: 2px solid #e9e9e9;
 	border-radius: 4px;
 }
 
@@ -130,4 +130,9 @@ table tr td:first-child {
 }
 table tr td:first-child td {
 	text-align:left;
+}
+
+.timing {
+	color: #aaa;
+	font-size: 80%;
 }
