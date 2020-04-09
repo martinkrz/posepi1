@@ -17,7 +17,7 @@ Interactive figures accompanying the column.
 
 ### Access remotely
 
-An link to an interactive version of this application will be available shortly.
+[Online interactive server](https://shiny.bcgsc.ca/posepi1/)
 
 ### Running locally
 
