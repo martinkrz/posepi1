@@ -141,7 +141,7 @@ server = function(input, output, session) {
                           "Sinf",varfmt(value=smax,prec=1,percent=1)
     )))
     
-    cat(paste("<p>The interactive figures here show how infection spread trajectories computed from the SIR model (see Equations tab) change with varying parameters.",sep=" "))
+    cat(paste("<p>These interactive figures show how the SIR model of infection spread (see Equations tab) changes with varying parameters, such infectious period ",varfmt("ip,"),"basic reproduction number",varfmt("R0,")," and vaccination level",varfmt("p."),sep=" "))
     cat(paste("<p>We start with a look at the trajectories of each of the three groups (susceptible, infected, recovered) for an infectious period of ",varfmt("ip",ip)," and a basic reproduction number",varfmt("R0",R0),bgstr,"with",varfmt("p",vac),"of the population vaccinated. For",varfmt("R0",R0),"the critical vaccination fraction for herd immunity is",varfmt("pc.",1-1/R0),"The initial susceptible group is the whole population minus the vaccinated fraction.",sep=" "))
     
     tmp   = df[df$I >= max(df$I)/2,]$time
@@ -149,8 +149,8 @@ server = function(input, output, session) {
     t2max = tmp[length(tmp)]
     
     cat(paste("<h4>key observations</h4>",sep=" "))
-    cat(paste("<p>Peak infected fraction is",varfmt("Imax",imax),"and occurs at",varfmt("tmax",timax),"when",varfmt("Stmax",stmax),"and",varfmt("Rtmax.",rtmax),"The cumulative epidemic size is",varfmt("Rinf,",rmax),"which means that",varfmt("Sinf",1-rmax),"of the population escapes infection.",sep=" "))
-    cat(paste("<p>The infected fraction trajectory is not symmetric&mdash;it has a right skew. It takes",varfmt("t",timax-t1max),"to increase from the half-maximum to maximum (start of light red area to vertical dotted line) but",varfmt("t",t2max-timax),"to decrease from maximum to half-maximum (vertical dotted line to end of light area). As",varfmt("R0"),"is decreased, this skew becomes less pronounced.",sep=" "))
+    cat(paste("<p>Peak infected fraction is",varfmt("Imax",imax),"and occurs at",varfmt("tmax",timax),"when",varfmt("Stmax",stmax),"and",varfmt("Rtmax.",rtmax),"The cumulative epidemic size at the end of the outbreak is",varfmt("Rinf,",rmax),"which means that",varfmt("Sinf",1-rmax),"of the population escapes infection.",sep=" "))
+    cat(paste("<p>The infected fraction trajectory is not symmetric&mdash;it has a right skew. It takes",varfmt("t",timax-t1max),"to increase from the half-maximum to maximum (start of light orange area to vertical dotted line) but",varfmt("t",t2max-timax),"to decrease from maximum to half-maximum (vertical dotted line to end of light orange area). As",varfmt("R0"),"is decreased, this skew becomes less pronounced.",sep=" "))
     
   })
   
@@ -234,9 +234,9 @@ server = function(input, output, session) {
                                       "I>deltat",varfmt(value=sumbeyondcap/sum,percent=1,prec=1,units="cases")
     )))
     
-    cat(paste("<p>If we can mitigate the",varfmt("R0"),"of an epidemic, we gain valuable public health benefits. This decrease can be achieved with strategies such as social distancing (decreases number of contacts) or hygiene (decreases chance of infection on contact) the peak of the infected fraction decreases and occurs later. This is the so-called 'flattening the curve'."))
+    cat(paste("<p>If we can mitigate the",varfmt("R0"),"of an epidemic, we gain valuable public health benefits. This decrease can be achieved with strategies such as social distancing (decreases number of contacts) or hygiene (decreases chance of infection on contact). The goal of mitigation is to reduce and delay the peak infected fraction. This is the so-called 'flattening the curve'."))
     
-    cat(paste("<p>For example, by lowering",varfmt("R0",R0init),"to",varfmt("R0,",R0final),"the peak infection is lowered from ",varfmt("Imax",imaxhi),"to",varfmt("Imax,",imaxlo),"which is a ",sprintf("%.1f%%",100*(imaxhi-imaxlo)/imaxhi),"relative decrease. Also, peak time is shifted from",varfmt("tmax",timaxmin),"to",varfmt("tmax,",timaxmax),"which is a delay of",sprintf("%.1f%%.",100*(timaxmax-timaxmin)/timaxmin),"The cumulative epidemic size drops from",varfmt("Rinf",rmaxhi),"to",varfmt("Rinf",rmaxlo),"which is a relative decrease of",sprintf("%.1f%%.",100*(rmaxhi-rmaxlo)/rmaxhi),sep=" "))
+    cat(paste("<p>For example, by lowering",varfmt("R0",R0init),"to",varfmt("R0,",R0final),"the peak infection is lowered from ",varfmt("Imax",imaxhi),"to",varfmt("Imax,",imaxlo),"which is a ",sprintf("%.1f%%",100*(imaxhi-imaxlo)/imaxhi),"relative decrease. Also, peak time is shifted from",varfmt("tmax",timaxmin),"to",varfmt("tmax,",timaxmax),"which is a relative delay of",sprintf("%.1f%%.",100*(timaxmax-timaxmin)/timaxmin),"The cumulative epidemic size drops from",varfmt("Rinf",rmaxhi),"to",varfmt("Rinf",rmaxlo),"which is a relative decrease of",sprintf("%.1f%%.",100*(rmaxhi-rmaxlo)/rmaxhi),sep=" "))
     
     cat(paste("<h4>key observations</h4>",sep=" "))
     
@@ -244,7 +244,7 @@ server = function(input, output, session) {
       cat(paste("<p>All curves are below hospital capacity.",sep=""))
     }
     if(nrow(ibeyondcap)) {
-      cat(paste("<p>If we assume a hospital capacity of",sprintf("%.0f%%,",100*capacity),"the original curve for",varfmt("R0",R0init),"would be beyond capacity from",varfmt("t1",t0beyondcap),"to",varfmt("t2",t1beyondcap),"for a duration of",varfmt("deltat.",t1beyondcap-t0beyondcap),"During this time we would see",varfmt("Ideltat",value=sumincap/sum),"cases with",varfmt("I>deltat",value=sumbeyondcap/sum),"of all cases falling above capacity.",sep=" "))
+      cat(paste("<p>If we assume a hospital capacity of",sprintf("%.0f%%,",100*capacity),"the original curve for",varfmt("R0",R0init),"would be beyond capacity from",varfmt("t1",t0beyondcap),"to",varfmt("t2",t1beyondcap),"for a duration of",varfmt("deltat.",t1beyondcap-t0beyondcap),"During this time we would see",varfmt("Ideltat",value=sumincap/sum),"cases with",varfmt("I>deltat",value=sumbeyondcap/sum),"of all cases falling above capacity. ",sep=" "))
     }
     if(nrow(ibeyondcapm)) {
       cat(paste("<p>The mitigated curve for ",varfmt("R0",R0final),"would be beyond capacity from ",varfmt("t1",t0beyondcapm),"to",varfmt("t2",t1beyondcapm),"for a duration of",varfmt("deltat.",t1beyondcapm-t0beyondcapm),"During this time we would see",varfmt("Ideltat",value=sumincapm/summ),"cases with",varfmt("I>deltat",sumbeyondcapm/summ),"of all cases falling above capacity.",sep=" "))
@@ -252,7 +252,7 @@ server = function(input, output, session) {
       s0 = sumbeyondcap/sum
       s1 = sumbeyondcapm/summ
       
-      cat(paste("<p>In this scenario, mitigation efforts have reduced the area of the curve above capacity from",varfmt("I>deltat",s0),"to",varfmt("I>deltat",s1),"which is a decrease of",sprintf("%.1f%%.",100*(s0-s1)/s0),sep=" "))      
+      cat(paste("<p>In this scenario, mitigation efforts have reduced the area of the curve above capacity from",varfmt("I>deltat",s0),"to",varfmt("I>deltat",s1),"which is a relative decrease of",sprintf("%.1f%%.",100*(s0-s1)/s0),sep=" "))      
       
       cat(paste("<p>In reality, for large populations the ",tags$a(href="https://en.wikipedia.org/wiki/List_of_countries_by_hospital_beds","hospital capacity is less than 1% with over 60% occupancy"),".",sep=""))
     }
@@ -316,7 +316,7 @@ server = function(input, output, session) {
     title = sprintf("Infection spread for <i>R</i><sub>0</sub> = %.1f and <i>ip</i> = %d days with %.0f%% vaccination.",R0,ip,100*vac)
     plot = plot + my.plot_legend + my.plot_axis(xmin = 0,xmax = tmax,ymin=0,ymax=1,log10=input$log1 )
     
-    caption = paste("The SIR model trajectories for susceptible, infected and recovered groups using",varfmt("R0",R0),"and",varfmt("ip",ip),"with",varfmt("p",vac),"vaccination. Lines indicate maximum infected fraction",varfmt("Imax",imax),"(orange dashed line), the time at which maximum infected fraction occurs",varfmt("tmax",tmax),"(dotted orange line) and the cumulative epidemic size",varfmt("Rinf",rmax),"(blue dashed line)",sir_caption(tmax,vac),sep=" ")
+    caption = paste("The SIR model trajectories for susceptible, infected and recovered groups for",varfmt("R0",R0),"and",varfmt("ip",ip),"with",varfmt("p",vac),"vaccination. Lines indicate peak infected fraction",varfmt("Imax",imax),"(orange dashed line), the time at which peak infected fraction occurs",varfmt("tmax",tmax),"(dotted orange line) and the cumulative epidemic size",varfmt("Rinf",rmax),"(blue dashed line).",sir_caption(tmax,vac),sep=" ")
     
     return(list(list(plot_theme(plot)),list(1),list(title),list(caption)))
   }
@@ -447,20 +447,20 @@ server = function(input, output, session) {
     plotR = plotR + my.plot_axis(xmin = 0,xmax = tmax, ymax = max(summary$rmax))
     
     plotImax = plotImax + my.plot_axis(xlab="R0",
-                                       ylab="peak infected, %",
+                                       ylab="peak infected (%)",
                                        #xmax=tmax,
                                        ymax=max(summary$imax))
     plotRmax = plotRmax + my.plot_axis(xlab="R0",
-                                       ylab="cumulative epidemic size, %",
+                                       ylab="cumulative epidemic size (%)",
                                        #xmax=tmax,
                                        ymin=min(summary$rmax),
                                        ymax=max(summary$rmax))
     plotImaxt = plotImaxt + my.plot_axis(xlab="infection peak time (days)",
-                                         ylab="peak infected, %",
+                                         ylab="peak infected (%)",
                                          #xmax=tmax,
                                          ymax=max(summary$imax))
     plotRmaxt = plotRmaxt + my.plot_axis(xlab="peak infection time (days)",
-                                         ylab="cumulative epidemic size, %",
+                                         ylab="cumulative epidemic size (%)",
                                          #xmax=tmax,
                                          ymin=min(summary$rmax),
                                          ymax=max(summary$rmax))
@@ -599,9 +599,9 @@ server = function(input, output, session) {
     
     plotI = plotI + my.plot_axis(xmin=0,xmax=tmax,ymax = max(summary$imax))
     plotR = plotR + my.plot_axis(xmin=0,xmax=tmax,ymax = max(summary$rmax))
-    plotImax = plotImax + my.plot_axis_both_percent(xlab="vaccination level, %",ylab="maximum infected, %",
+    plotImax = plotImax + my.plot_axis_both_percent(xlab="vaccination (%)",ylab="peak infected (%)",
                                                     ymax = max(summary$imax))
-    plotRmax = plotRmax + my.plot_axis_both_percent(xlab="vaccination level, %",ylab="cumulative epidemic size, %",
+    plotRmax = plotRmax + my.plot_axis_both_percent(xlab="vaccination (%)",ylab="cumulative epidemic size (%)",
                                                     ymax = max(summary$rmax))
     
     #plotI = plotI + scale_x_continuous(lim=c(0,tmax))

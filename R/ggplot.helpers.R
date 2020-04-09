@@ -67,7 +67,7 @@ axis_spacing = function(min=0,max=1,default=0.2) {
   }
   return(spacing)
 }
-my.plot_axis = function(xlab="days",ylab="percent of population",xmin=NULL,xmax=NULL,ymin=0,ymax=1,log10=0,plotn=1) {
+my.plot_axis = function(xlab="days",ylab="percent of population (%)",xmin=NULL,xmax=NULL,ymin=0,ymax=1,log10=0,plotn=1) {
   ymin = max(0,floorToFraction(ymin,0.05))
   ymax = min(1,ceilToFraction(ymax,0.05))
   by   = axis_spacing(ymin,ymax)
@@ -84,7 +84,7 @@ my.plot_axis = function(xlab="days",ylab="percent of population",xmin=NULL,xmax=
   return(opt)
 }
 
-my.plot_axis_both_percent = function(xlab="days",ylab="percent of population",ymin=0,ymax=1,xmin=NULL,xmax=NULL) {
+my.plot_axis_both_percent = function(xlab="days",ylab="percent of population (%)",ymin=0,ymax=1,xmin=NULL,xmax=NULL) {
   ymax = min(1,ceilToFraction(ymax,0.05))
   ymin = max(0,floorToFraction(ymin,0.05))
   by   = axis_spacing(ymin,ymax)
