@@ -121,7 +121,7 @@ ui = fluidPage( theme=("css/style.css"),
                                       helpText("$$S + I + R = N = 1$$")
                                     ),
                                     p("where",tags$i("p"),"is the vaccination fraction.")),
-                           tabPanel("Credits",value=5,id="5",
+                           tabPanel("Download & Credits",value=5,id="5",
                                     mainPanel(
                                       h3("Points of Significance: Modelling Infectious Epidemics"),
                                       p(HTML("Ottar Bjornstad<sup>1,2</sup>, Katriona Shea<sup>1</sup>, Martin Krzywinski<sup>3*</sup>, Naomi Altman<sup>4</sup>")),
