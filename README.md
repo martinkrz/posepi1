@@ -6,7 +6,7 @@
 
 1. Department of Biology, The Pennsylvania State University, State College, PA, USA.
 2. Department of Entomology, The Pennsylvania State University, State College, PA, USA.
-3. Canada’s Michael Smith Genome Sciences Center, Vancouver, British Columbia, Canada.
+3. Canada's Michael Smith Genome Sciences Center, Vancouver, British Columbia, Canada.
 4. Department of Statistics, The Pennsylvania State University, State College, PA, USA.
 
 [Interactive figures](https://shiny.bcgsc.ca/posepi1/) accompanying the column.
@@ -38,6 +38,12 @@ Run the app by loading `app.R` and cliking `Run App`.
 ## Bugs and comments
 
 [Martin Krzywinski](mailto:martink@bcgsc.ca)
+
+## Versions
+
+### v1.0.0
+
+Initial release.
 
 ## Citation
 
