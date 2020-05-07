@@ -122,7 +122,7 @@ server = function(input, output, session) {
   
   output$masthead = renderPrint({ 
     cat(paste("<div id=natmeth><img src='img/nature.methods.png'/></div>",sep=""))
-    cat(paste("<div id=mast><b>Supplemental Materials |</b> Bjornstad, O., Shea, K., Krzywinski, M. & Altman, N. Points of Significance: Modelling infectious epidemics (2020) <i>Nat Meth</i> <b>17</b> (in press).</div>",sep=""))
+    cat(paste("<div id=mast>Bjørnstad, O., Shea, K., Krzywinski, M. & Altman, N. Points of Significance: Modelling infectious epidemics (2020) <i>Nat Meth</i> <b>17</b>:455&ndash;456.</div>",sep=""))
     
   })
   

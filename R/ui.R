@@ -123,8 +123,8 @@ ui = fluidPage( theme=("css/style.css"),
                                     p("where",tags$i("p"),"is the vaccination fraction.")),
                            tabPanel("Download & Credits",value=5,id="5",
                                     mainPanel(
-                                      h3("Points of Significance: Modelling Infectious Epidemics"),
-                                      p(HTML("Ottar Bjornstad<sup>1,2</sup>, Katriona Shea<sup>1</sup>, Martin Krzywinski<sup>3*</sup>, Naomi Altman<sup>4</sup>")),
+                                      h3("Points of Significance: Modelling infectious epidemics"),
+                                      p(HTML("Ottar Bjørnstad<sup>1,2</sup>, Katriona Shea<sup>1</sup>, Martin Krzywinski<sup>3*</sup>, Naomi Altman<sup>4</sup>")),
                                       div(
                                       p("1. Department of Biology, The Pennsylvania State University, State College, PA, USA."),
                                       p("2. Department of Entomology, The Pennsylvania State University, State College, PA, USA."),
@@ -139,12 +139,14 @@ ui = fluidPage( theme=("css/style.css"),
                                       
                                       hr(),
                                       h4("Citation"),
-                                      p(HTML("Bjornstad, O., Shea, K., Krzywinski, M. & Altman, N. Points of Significance: Modelling Infectious Epidemics (2020) <i>Nature Methods</i> <b>17</b> (in press).")),
+                                      p(HTML("Bjørnstad, O., Shea, K., Krzywinski, M. & Altman, N. Points of Significance: Modelling infectious epidemics (2020) <i>Nature Methods</i> <b>17</b>:455&ndash;456.")),
                                       
                                       hr(),
                                       h4("Version history"),
                                       h5("9 April 2020 v1.0.0"),
                                       p("Initial public release."),
+                                      h5("17 May 2020 v1.0.1"),
+                                      p("Minor text changes. Fixed typos."),
                                       width=16
                                       
                                     ))

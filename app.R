@@ -59,6 +59,7 @@ library(stringr)
 #              Removed fixed plot height and aspect ratio
 # 09-04-2020   added debug timings
 #              reduced time steps to 1000 to decrease load on server
+# 06-05-2020   minor text changes and fixed typos
 
 # CUSTOM SETTINGS
 # The colors of the suscetible (S), infected  (I) and recovered (R) trajectories. 
