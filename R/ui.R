@@ -113,7 +113,7 @@ ui = fluidPage( theme=("css/style.css"),
                                       helpText("Recovery rate $$\\gamma = \\frac{1}{\\text{infectious period}}$$"),
                                       helpText("Basic reproduction number $$R_0 =  \\frac{\\beta}{\\gamma}$$")             
                                     ),
-                                    p("Infection trajectories show a numerical solution to the SIR equations with 5,000 time steps and initial parameters"),
+                                    p("Infection trajectories show a numerical solution to the SIR equations with 1,000 time steps and initial parameters"),
                                     withMathJax(
                                       helpText("$$S(0) = 0.999 - p$$"),
                                       helpText("$$I(0) = 0.001$$"),
