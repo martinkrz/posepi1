@@ -26,6 +26,10 @@ body {
 	color: white;
 	margin-bottom:2px;
 }
+#mast a {
+color: inherit;
+text-decoration: underline;
+}
 
 /* plot container and title, plot and caption */
 .plotbox {
@@ -49,10 +53,14 @@ body {
 	color: #666;
 	margin-bottom: 0em;
 }
-
+.caption1, .caption2, .caption3 {
+}
 .copy p {
 	margin: 0 0 0.5em 0;	
 }
+.copy1, .copy2, .copy3 {
+}
+
 .affiliations p {
 	margin: 0;
 }

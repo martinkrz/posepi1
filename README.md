@@ -53,11 +53,14 @@ Initial release.
 
 Minor text changes and fixed typos.
 
+### v1.0.2
+
+UI tweaks.
+
 ## Citation
 
-Bjørnstad, O., Shea, K., Krzywinski, M. & Altman, N. Points of Significance: Modelling infectious epidemics (2020) *Nature Methods* **17**:455-456.
+Bjørnstad, O., Shea, K., Krzywinski, M. & Altman, N. [Points of Significance: Modelling infectious epidemics](https://www.nature.com/articles/s41592-020-0822-z) (2020) *Nature Methods* **17**:455-456.
 
 ## License
 
-This proejct is licensed under the Creative Commons Attribution-NonCommercial 4.0 International Public License - see the [LICENSE](LICENSE) file for details.
-
+This project is licensed under the [https://creativecommons.org/licenses/by-nc/4.0/](Creative Commons Attribution-NonCommercial 4.0 International Public License) - see the [LICENSE](LICENSE) file for details.

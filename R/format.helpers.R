@@ -132,7 +132,7 @@ varfmt = function(name=NULL,value=NULL,prec=1,percent=0,comma=0,units="") {
 }
 
 titlefmt = function(index,title) {
-  sprintf("<h5><b>Supplemental Figure %d</b><br><p>%s</p>",index,title)
+  sprintf("<h5><b>Figure %d</b><br><p>%s</p>",index,title)
 }
 
 label_to_percent = function(str) {
