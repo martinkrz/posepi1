@@ -7,7 +7,7 @@
 3. Canada's Michael Smith Genome Sciences Center, Vancouver, British Columbia, Canada.
 4. Department of Statistics, The Pennsylvania State University, State College, PA, USA.
 
-Explore [interactive figures](https://shiny.bcgsc.ca/posepi1/) or [download the code](https://github.com/martinkrz/posepi1) accompanying the column.
+Explore [interactive figures](https://shiny.bcgsc.ca/posepi1/) or [download the code](https://martinkrz.github.io/posepi1/) accompanying the column.
 
 ![Points of Significance: Modeling infectious epidemics](https://raw.githubusercontent.com/martinkrz/posepi1/master/www/img/screenshot.png)
 
@@ -26,7 +26,7 @@ Explore [interactive figures](https://shiny.bcgsc.ca/posepi1/) or [download the 
 Download [R Studio](http://rstudio.com) and install packages.
 
 ```
-install.packages(c("shiny","deSolve","ggplot2","grid","stringr"))
+install.packages(c("shiny","deSolve","ggplot2","grid","tidyverse","stringr","shinyjs","shinyWidgets"))
 ```
 
 Run the app by loading `app.R` and cliking `Run App`.
