@@ -62,6 +62,7 @@ library(shinyjs)
 #              reduced time steps to 1000 to decrease load on server
 # 06-05-2020   minor text changes and fixed typos
 # 13-05-2020   UI tweaks
+# 18-06-2020   added link to SEIRS column
 
 # CUSTOM SETTINGS
 # The colors of the suscetible (S), infected  (I) and recovered (R) trajectories. 
