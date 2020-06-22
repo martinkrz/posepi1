@@ -9,14 +9,14 @@
 #
 # CITATION
 # Bjornstad, O., Shea, K., Krzywinski, M. & Altman, N. 
-# Points of Significance: Modelling Infectious Epidemics (2020) Nat Meth 17 (in press)
+# Points of Significance: Modelling Infectious Epidemics (2020) Nature Methods 17:455-456.
 #
 # DOWNLOAD
-# https://github.com/martinkrz/posepi1
+# https://martinkrz.github.io/posepi1
 #
 # REMOTE ACCESS
 #
-# For the URL running the latest version of this app check the GitHub page (link above).
+# http://shiny.bcgsc.ca/posepi1
 #
 # RUN LOCALLY
 #
