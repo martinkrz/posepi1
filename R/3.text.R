@@ -18,4 +18,9 @@ output$text3 = renderPrint({
   cat(paste("<p>Shown are infected and recovered trajectories as vaccination level is increased from",varfmt("p",0),"to",varfmt("p",pc_range[length(pc_range)]),"for an epidemic with ",varfmt("R0.",R0),sep=" "))
   cat(paste("<h4>Key observations</h4>"))
   cat(paste("<p>If the population if vaccinated at the critical fraction",varfmt("pc",1-1/R0),"an oubreak does not occur. At this level of vaccination the population has so-called 'herd immunity'.", sep=" "))
+
+  cat(paste("<p>The recovered <i>R</i>(<i>t</i>) trace shows the fraction of the population that gained immunity from infection. There is an additional component (not shown in the plot) to the recovered fraction of <i>p</i> that is due to vaccination."))
+
+
+
 })

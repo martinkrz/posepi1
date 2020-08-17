@@ -41,4 +41,8 @@ output$text1 = renderPrint({
   cat(paste("<p>Peak infected fraction is",varfmt("Imax",imax),"and occurs at",varfmt("tmax",timax),"when",varfmt("Stmax",stmax),"and",varfmt("Rtmax.",rtmax),"The cumulative epidemic size at the end of the outbreak is",varfmt("Rinf,",rmax),"which means that",varfmt("Sinf",1-rmax),"of the population escapes infection.",sep=" "))
   cat(paste("<p>The infected fraction trajectory is not symmetric&mdash;it has a right skew. It takes",varfmt("t",timax-t1max),"to increase from the half-maximum to maximum (start of light orange area to vertical dotted line) but",varfmt("t",t2max-timax),"to decrease from maximum to half-maximum (vertical dotted line to end of light orange area). As",varfmt("R0"),"is decreased, this skew becomes less pronounced.",sep=" "))
   
+  if(vac > 0) {
+    cat(paste("<p>The recovered <i>R</i>(<i>t</i>) trace shows the fraction of the population that gained immunity from infection. There is an additional component (not shown in the plot) to the recovered fraction of",varfmt("p",vac,percent=1),"that is due to vaccination."))
+  }
+
 })
