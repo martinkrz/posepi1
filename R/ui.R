@@ -1,7 +1,7 @@
 ui = fluidPage( theme=("css/style.css"),
                 shinyjs::useShinyjs(),
                 htmlOutput("masthead"),
-                navbarPage("Modelling Infectious Epidemics",id="tabs",
+                navbarPage("Modelling infectious epidemics",id="tabs",
                            tabPanel("The SIR model",value=1,id=1,
                                     sidebarLayout(
                                       sidebarPanel(
