@@ -25,9 +25,9 @@
 require(shiny)
 require(deSolve)
 require(ggplot2)
-library(grid)
 library(stringr)
 library(shinyjs)
+library(shinyWidgets)
 #
 # 2. Getting started
 #
@@ -82,6 +82,9 @@ R0_max               = 5
 R0_step              = 0.1
 # do timings
 do_timing            = FALSE
+
+interpretive_default = FALSE
+captions_default     = FALSE
 
 my.plot_legend = list(
   scale_colour_manual("GROUP", 

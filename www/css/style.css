@@ -40,7 +40,7 @@ text-decoration: underline;
 .title {
 	padding: 0 0 5px 0;
 	margin-bottom: 5px;
-	border-top: 1.5px solid #666;
+	/*border-top: 1.5px solid #666;*/
 	color: #333;
 }
 .plot {
@@ -126,7 +126,6 @@ div.parameters div {
 table {
 
 }
-
 
 table tr {
 	padding: 10px 0;
