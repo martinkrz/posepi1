@@ -1,6 +1,6 @@
 plots1 = function(R0,ip,vac) {
-  df   = df1()
-  plot = ggplot(data=df,aes(x=time))
+  df    = df1()
+  plot  = ggplot(data=df,aes(x=time))
   imax  = df[df$I == max(df$I),]$I
   rmax  = df[nrow(df),]$R
   timax = df[df$I == max(df$I),]$time
