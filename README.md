@@ -62,6 +62,10 @@ Added link to SEIRS column.
 
 Added link to uncertainty and management column.
 
+### v1.0.5
+
+Fixed bug in 1.plot.R that was using tmax instead of timax in the figure legend.
+
 ## Citation
 
 Bjørnstad, O., Shea, K., Krzywinski, M. & Altman, N. [Points of Significance: Modelling infectious epidemics](https://www.nature.com/articles/s41592-020-0822-z). (2020) *Nature Methods* **17**:455-456. ([interactive figures](http://shiny.bcgsc.ca/posepi1), [download code](https://martinkrz.github.io/posepi1/))
