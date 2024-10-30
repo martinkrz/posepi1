@@ -28,7 +28,7 @@ plots1 = function(R0,ip,vac) {
   title = sprintf("Infection spread for <i>R</i><sub>0</sub> = %.1f and <i>ip</i> = %d days with %.0f%% vaccination.",R0,ip,100*vac)
   plot = plot + my.plot_legend + my.plot_axis(xmin = 0,xmax = tmax,ymin=0,ymax=1,log10=input$log1 )
   
-  caption = paste("The SIR model trajectories for susceptible, infected and recovered groups for",varfmt("R0",R0),"and",varfmt("ip",ip),"with",varfmt("p",vac),"vaccination. Lines indicate peak infected fraction",varfmt("Imax",imax),"(orange dashed line), the time at which peak infected fraction occurs",varfmt("tmax",tmax),"(dotted orange line) and the cumulative epidemic size",varfmt("Rinf",rmax),"(blue dashed line).",sir_caption(tmax,vac),sep=" ")
+  caption = paste("The SIR model trajectories for susceptible, infected and recovered groups for",varfmt("R0",R0),"and",varfmt("ip",ip),"with",varfmt("p",vac),"vaccination. Lines indicate peak infected fraction",varfmt("Imax",imax),"(orange dashed line), the time at which peak infected fraction occurs",varfmt("tmax",timax),"(dotted orange line) and the cumulative epidemic size",varfmt("Rinf",rmax),"(blue dashed line).",sir_caption(tmax,vac),sep=" ")
   
   return(list(list(plot_theme(plot)),list(1),list(title),list(caption)))
 }
