@@ -170,6 +170,8 @@ ui = fluidPage( theme=("css/style.css"),
                                       p("Added link to uncertainty and management column."),
                                       h5("30 October 2024 v1.0.5"),
                                       p("Fixed bug in figure legend of plot 1 that was showing incorrect value for epidemic peak."),
+                                      h5("31 October 2024 v1.0.6"),
+                                      p("Fixed bug in figure legend of plot 1 that was showing incorrect value for beta."),
                                       
                                       hr(),
                                       h4("RELATED COLUMNS"),
